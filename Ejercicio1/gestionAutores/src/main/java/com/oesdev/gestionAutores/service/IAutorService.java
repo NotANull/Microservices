@@ -2,7 +2,6 @@ package com.oesdev.gestionAutores.service;
 
 import com.oesdev.gestionAutores.dto.request.AutorDto;
 import com.oesdev.gestionAutores.dto.response.MessageResponseDto;
-import com.oesdev.gestionAutores.entity.Autor;
 
 import java.util.List;
 

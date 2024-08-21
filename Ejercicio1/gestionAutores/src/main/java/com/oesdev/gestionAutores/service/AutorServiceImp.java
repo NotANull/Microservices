@@ -2,7 +2,7 @@ package com.oesdev.gestionAutores.service;
 
 import com.oesdev.gestionAutores.dto.request.AutorDto;
 import com.oesdev.gestionAutores.dto.response.MessageResponseDto;
-import com.oesdev.gestionAutores.entity.Autor;
+import com.oesdev.gestionAutores.entity.Author;
 import com.oesdev.gestionAutores.repository.IAutorRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class AutorServiceImp implements IAutorService{
     @Override
     public MessageResponseDto create(AutorDto dto) {
 
-        Autor a = new Autor();
+        Author a = new Author();
         a.setFullName(dto.getFullName());
         a.setDateBirth(dto.getDateBirth());
         a.setIdBooksList(dto.getIdBooksList());
@@ -34,7 +34,7 @@ public class AutorServiceImp implements IAutorService{
     @Override
     public AutorDto read(Long id) {
 
-        Autor a = this.repository.findById(id).orElse(null);
+        Author a = this.repository.findById(id).orElse(null);
 
         AutorDto aDto = new AutorDto();
         aDto.setFullName(a.getFullName());
@@ -47,7 +47,7 @@ public class AutorServiceImp implements IAutorService{
     @Override
     public List<AutorDto> readList() {
 
-        List<Autor> autors = this.repository.findAll();
+        List<Author> autors = this.repository.findAll();
 
         return autors.stream()
                 .map(autor -> new AutorDto(autor.getFullName(), autor.getDateBirth(), autor.getIdBooksList()))
@@ -58,7 +58,7 @@ public class AutorServiceImp implements IAutorService{
     @Override
     public MessageResponseDto update(Long id, AutorDto dto) {
 
-        Autor a = this.repository.findById(id).orElse(null);
+        Author a = this.repository.findById(id).orElse(null);
 
         a.setFullName(dto.getFullName());
         a.setIdBooksList(dto.getIdBooksList());

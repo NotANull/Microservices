@@ -1,4 +1,4 @@
-package com.oesdev.gestionAutores.entity;
+package com.oesdev.gestionLibros.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,14 +12,15 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
-public class Autor {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String fullName;
-    private LocalDate dateBirth;
+    private Long isbn;
+    private String title;
+    private LocalDate publiDate;
+    private String description;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<Integer> idBooksList;
+    private List<Author> authorList;
 }
