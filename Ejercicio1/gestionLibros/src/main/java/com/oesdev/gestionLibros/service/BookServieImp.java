@@ -33,9 +33,6 @@ public class BookServieImp implements IBookService{
 
         this.repository.save(b); //Guardo el objeto entidad en la db
 
-        return dto.getAuthorList().stream()
-                .map(author ->
-                        )
-
+        return null;
     }
 }
