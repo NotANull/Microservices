@@ -22,6 +22,6 @@ public class BookController {
 
     @PostMapping("/create")
     public List<AuthorDtoResponse> createBook(@RequestBody BookDtoRequest dto) {
-        return this.service.create(dto);
+        return this.service.create(dto); //Prueba comentario
     }
 }
