@@ -22,5 +22,5 @@ public class Book {
     private String description;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<Author> authorList;
+    private List<Author> authorList; //Fixear
 }
