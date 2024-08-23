@@ -1,6 +1,7 @@
 package com.oesdev.gestionAutores.service;
 
 import com.oesdev.gestionAutores.dto.request.AutorDto;
+import com.oesdev.gestionAutores.dto.response.AuthorDtoResponse;
 import com.oesdev.gestionAutores.dto.response.MessageResponseDto;
 import com.oesdev.gestionAutores.entity.Author;
 import com.oesdev.gestionAutores.repository.IAutorRepository;
@@ -52,6 +53,15 @@ public class AutorServiceImp implements IAutorService{
         return autors.stream()
                 .map(autor -> new AutorDto(autor.getFullName(), autor.getDateBirth(), autor.getIdBooksList()))
                 .toList();
+
+    }
+
+    @Override
+    public AuthorDtoResponse readAuthorByFullName(String fullname) {
+
+        Author a = this.repository.findAuthorByFullName(fullname);
+
+        return new AuthorDtoResponse(a.getFullName(), a.getDateBirth());
 
     }
 

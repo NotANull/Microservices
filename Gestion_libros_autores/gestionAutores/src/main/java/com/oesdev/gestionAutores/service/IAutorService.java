@@ -1,6 +1,7 @@
 package com.oesdev.gestionAutores.service;
 
 import com.oesdev.gestionAutores.dto.request.AutorDto;
+import com.oesdev.gestionAutores.dto.response.AuthorDtoResponse;
 import com.oesdev.gestionAutores.dto.response.MessageResponseDto;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface IAutorService {
     MessageResponseDto update(Long id, AutorDto dto);
 
     MessageResponseDto delete(Long id);
+
+    AuthorDtoResponse readAuthorByFullName(String fullname);
 }
